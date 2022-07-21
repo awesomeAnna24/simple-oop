@@ -19,9 +19,7 @@ class SoftwareEngineer {
   //Method to greet user
   //Polymorphism
   sayHello() {
-    console.log(
-      `Hello user. This is ${this.name}, a ${this.role} company with ${this._position} with ${this._experience} years of experience in the tech industry.`
-    );
+    return `Hello user. This is ${this.name}, a ${this.role} startup with ${this._position} with ${this._experience} years of experience in the tech industry.`;
   }
 }
 
@@ -50,9 +48,7 @@ class FrontEndDev extends SoftwareEngineer {
   }
   //Polymorphism
   sayHello() {
-    console.log(
-      `Hello user. I am ${this._name}, a ${this._role} ${this._position} with ${this.experience} years experience and specializing in ${this.languages}.`
-    );
+    return `Hello user. I am ${this._name}, a ${this._role} ${this._position} with ${this.experience} years experience and specializing in ${this.languages}.`;
   }
 }
 //Creating user wit front end dev child class
@@ -80,9 +76,7 @@ class backEndDev extends SoftwareEngineer {
   }
   //sayHello to user
   sayHello() {
-    console.log(
-      `Hello user. I am ${this._name}, a ${this._role} ${this._position} with ${this._experience} years experience in ${this._language} having previously worked at ${this._previousCo}.`
-    );
+    return `Hello user. I am ${this._name}, a ${this._role} ${this._position} with ${this._experience} years experience in ${this._language} having previously worked at ${this._previousCo}.`;
   }
 }
 
@@ -100,4 +94,19 @@ let muringo = new backEndDev(
 let staff = [company, oscar, muringo];
 for (let devs of staff) {
   devs.sayHello();
+}
+//Display information on dom
+document.getElementById('co').addEventListener('click', companyCv);
+document.getElementById('front-end').addEventListener('click', frontEndDevCv);
+document.getElementById('back-end').addEventListener('click', backEndDevCv);
+
+//Button event listener
+function companyCv() {
+  document.getElementById('company').innerText = company.sayHello();
+}
+function frontEndDevCv() {
+  document.getElementById('frontend-dev').innerText = oscar.sayHello();
+}
+function backEndDevCv() {
+  document.getElementById('backend-dev').innerText = muringo.sayHello();
 }
