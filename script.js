@@ -26,8 +26,7 @@ class SoftwareEngineer {
 let company = new SoftwareEngineer(
   'Ana & Co.',
   'Full Stack',
-  'junior and senior devs',
-  'Html, css, js, php and react native',
+  'junior and senior devs working on Html, css, js, php and react native',
   10
 );
 
